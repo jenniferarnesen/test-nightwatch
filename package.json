@@ -1,0 +1,16 @@
+{
+  "name": "test-nightwatch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nightwatch": "^0.9.16",
+    "selenium-standalone": "^6.9.0"
+  }
+}
