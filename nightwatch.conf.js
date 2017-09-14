@@ -1,9 +1,11 @@
+// require('geckodriver');
+
 require('nightwatch-cucumber')({
     cucumberArgs: [
-        '--require', 'tests/features/step_definitions',
+        '--require', 'features/step_definitions',
         // '--format', 'pretty',
-        // '--format', 'json:reports/cucumber.json',
-        'tests/features'
+        '--format', 'json:reports/cucumber.json',
+        'features'
       ]
 });
 
@@ -18,7 +20,8 @@ module.exports = {
     "host": "127.0.0.1",
     "port": 4444, // standard selenium port
     // "cli_args": {
-    //   "webdriver.chrome.driver" : "./node_modules/chromedriver/lib/chromedriver/chromedriver"
+    //   "webdriver.chrome.driver" : "./node_modules/chromedriver/lib/chromedriver/chromedriver",
+    //   "webdriver.gecko.driver" : "./node_modules/geckodriver/geckodriver",
     // }
   },
   
@@ -38,16 +41,18 @@ module.exports = {
       }
     },
 
-    "firefox" : {
-      "desiredCapabilities": {
-        "browserName": "firefox"
-      }
-    },
+    // "firefox" : {
+    //   "desiredCapabilities": {
+    //     "browserName": "firefox",
+    //     "marionette": true,
+    //     "javascriptEnabled": true
+    //   }
+    // },
 
-    "edge" : {
-      "desiredCapabilities": {
-        "browserName": "MicrosoftEdge"
-      }
-    }
+    // "edge" : {
+    //   "desiredCapabilities": {
+    //     "browserName": "MicrosoftEdge"
+    //   }
+    // }
   }
 }
