@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chromedriver": "^2.32.2",
+    "cucumber": "^3.0.2",
     "nightwatch": "^0.9.16",
-    "selenium-standalone": "^6.9.0"
+    "nightwatch-cucumber": "^8.0.10",
+    "selenium-server": "^3.5.3"
   }
 }
