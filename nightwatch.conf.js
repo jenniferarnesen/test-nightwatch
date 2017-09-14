@@ -1,5 +1,5 @@
 // require('geckodriver');
-
+const seleniumServer = require('selenium-server')
 require('nightwatch-cucumber')({
     cucumberArgs: [
         '--require', 'features/step_definitions',
@@ -16,9 +16,9 @@ module.exports = {
   
   "selenium": { // downloaded by selenium-download module (see readme)
     "start_process": true, // tells nightwatch to start/stop the selenium process
-    "server_path": "./node_modules/selenium-server/lib/runner/selenium-server-standalone-3.5.3.jar",
+    "server_path": seleniumServer.path,
     "host": "127.0.0.1",
-    "port": 4444, // standard selenium port
+    "port": 4444,
     // "cli_args": {
     //   "webdriver.chrome.driver" : "./node_modules/chromedriver/lib/chromedriver/chromedriver",
     //   "webdriver.gecko.driver" : "./node_modules/geckodriver/geckodriver",
@@ -27,7 +27,7 @@ module.exports = {
   
   "test_settings" : {
     "default" : {
-      "launch_url" : "http://localhost",
+      "launch_url" : process.env.DHIS2_LOCAL || "http://localhost:8080",
       "selenium_port"  : 4444,
       "selenium_host"  : "localhost",
       "silent": true,
@@ -37,8 +37,13 @@ module.exports = {
       },
       "desiredCapabilities": {
         "browserName": "chrome",
-        "marionette": true
+        // "marionette": true,
+        "acceptSslCerts": true
       }
+    },
+
+    "demo": {
+        "launch_url": "https://play.dhis2.org/demo"
     },
 
     // "firefox" : {
