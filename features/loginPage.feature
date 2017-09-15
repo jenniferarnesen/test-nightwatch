@@ -1,4 +1,4 @@
-# features/loginScreen.feature
+@loginPage
 
 Feature: Login page
 
