@@ -11,8 +11,9 @@ defineSupportCode(({Given, Then, BeforeAll, AfterAll}) => {
     });
 
     Then(/^the dashboard page should be loaded$/, () => {
-        return client
-            .assert.elementPresent('#mainPage')
+        client.page.dashboard().assert.visible('@main');
+
+        client
             .logout(client.launchUrl)
             .end();
     });
