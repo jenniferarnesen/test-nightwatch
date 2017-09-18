@@ -11,7 +11,8 @@ defineSupportCode(({Given, Then, When}) => {
   Then(/^the login form exists$/, () => {
     return client
         .assert.visible('input#j_username')
-        .assert.visible('input[type=password]');
+        .assert.visible('input[type=password]')
+        .end();
   });
 
 });

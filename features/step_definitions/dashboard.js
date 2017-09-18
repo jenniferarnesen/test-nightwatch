@@ -13,7 +13,8 @@ defineSupportCode(({Given, Then, BeforeAll, AfterAll}) => {
     Then(/^the dashboard page should be loaded$/, () => {
         return client
             .assert.elementPresent('#mainPage')
-            .logout(client.launchUrl);
+            .logout(client.launchUrl)
+            .end();
     });
 
     // AfterAll({tags: "@dashboard"}, () => client.logout(client.launchUrl));

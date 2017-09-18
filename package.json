@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch --tag dashboard",
+    "test": "nightwatch",
     "test-ci": "nightwatch --env demo"
   },
   "keywords": [],
