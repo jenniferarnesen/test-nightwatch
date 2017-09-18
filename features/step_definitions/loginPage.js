@@ -2,17 +2,16 @@ const { client } = require('nightwatch-cucumber');
 const { defineSupportCode } = require('cucumber');
 
 defineSupportCode(({Given, Then, When}) => {
-  Given(/^I navigate to dhis2$/, () => {
-    return client
-        .url(client.launchUrl)
-        .waitForElementVisible('body', 2000);
-  });
+    Given(/^I navigate to dhis2$/, () => {
+        return client.page.login().navigate().login('admin', 'password');
+    });
 
-  Then(/^the login form exists$/, () => {
-    return client
-        .assert.visible('input#j_username')
-        .assert.visible('input[type=password]')
-        .end();
-  });
+    Then(/^the login form exists$/, () => {
+        client.page.login()
+            .assert.visible('@usernameField')
+            .assert.visible('@passwordField')
+
+        return client.end();
+});
 
 });
