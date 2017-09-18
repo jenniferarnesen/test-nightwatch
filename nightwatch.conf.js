@@ -10,7 +10,6 @@ require('nightwatch-cucumber')({
 
 module.exports = {
     "output_folder": "./reports",
-    "custom_commands_path": "./custom_commands",
     "page_objects_path": './page_objects',
 
     "selenium": {
